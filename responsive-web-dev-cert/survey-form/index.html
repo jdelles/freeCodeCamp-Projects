@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"> 
+        <title>Survey of Software Engineers in FinTech</title>
+    </head>
+    <body>
+    <div class="container">
+        <header>
+            <h1 id="title" class="text-center">Networking in Software Engineering</h1>
+            <p id="description" class="text-center">Seeking cool people and projects in FinTech</p>
+        </header>
+        <main>
+            <form id="survey-form">
+                <div class="form-group">
+                    <label id="name-label" for="name">Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="form-item"
+                        placeholder="Wile E. Coyote"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label id="email-label" for="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="form-item"
+                        placeholder="FastandFurry-ous@looneytoons.com"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label id="number-label" for="number">Years of Experience<span class="clue">(optional)</span></label>
+                    <input
+                        type="number"
+                        name="age"
+                        id="number"
+                        min="10"
+                        max="99"
+                        class="form-item"
+                        placeholder="72"
+                    />
+                </div>
+                <div class="form-group">
+                    <p>Which option best describes your current role?</p>
+                    <select id="dropdown" name="role" class="form-item" required>
+                        <option disabled selected value>Select current role</option>
+                        <option value="engineer">Software Engineer</option>
+                        <option value="recruiter">Recruiter</option>
+                        <option value="founder">Founder</option>
+                        <option value="student">Student</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p>Are you interested in helping entry level software engineers?</p>
+                    <label>
+                    <input
+                        name="user-recommend"
+                        value="yes"
+                        type="radio"
+                        class="input-radio"
+                        checked
+                    />Yes</label>
+                    <label>
+                    <input
+                        name="user-recommend"
+                        value="maybe"
+                        type="radio"
+                        class="input-radio"
+                    />Maybe</label>
+                    <label>
+                    <input
+                        name="user-recommend"
+                        value="no"
+                        type="radio"
+                        class="input-radio"
+                    />No</label>
+                </div>
+                <div class="form-group">
+                    <p>How would you like to help?<span class="clue">(Check all that apply)</span></p>
+                    <label>
+                    <input
+                        name="prefer"
+                        value="networking"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Networking</label>
+                    <label>
+                    <input
+                        name="prefer"
+                        value="projects"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Projects</label>
+                    <label
+                    ><input
+                        name="prefer"
+                        value="job-search"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Job Search</label>
+                    <label
+                    ><input
+                        name="prefer"
+                        value="education"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Education</label>
+                </div>
+                <div class="form-group">
+                    <p>Comments or suggestions?</p>
+                    <textarea
+                        id="comments"
+                        class="input-textarea"
+                        name="comment"
+                        placeholder="Comment here...">
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submit" class="submit-button">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+:root {
+    --color-white: #f1f1f1;
+    --color-black: #080C12; 
+    --color-blue: #00d4ff; 
+  }
+  
+  *, 
+  *::before, 
+  *::after {
+      box-sizing: border-box;
+  }
+  
+  body {
+    background: rgb(2,0,36);
+    background: linear-gradient(290deg, rgba(2,0,36,1) 0%, rgba(3,3,55,1) 20%, rgba(0,212,255,1) 100%);
+    color: var(--color-white); 
+    font-family: 'Oswald', sans-serif;
+    font-size: calc(16px + 1vw); 
+    line-height: calc(1.1em + 0.5vw); 
+    margin: 0; 
+  }
+  
+  h1 {
+    font-weight: 400; 
+    line-height: calc(1em + 0.5vw); 
+  }
+  
+  p {
+    font-size: calc(1em + 0.5vw);
+  }
+  
+  h1, 
+  p {
+    margin-top: 0; 
+    margin-bottom: calc(.5em + 0.75vw); 
+  }
+  
+  form p {
+      color: var(--color-blue) !important; 
+  }
+  
+  label {
+    display: flex; 
+    align-items: center; 
+    font-size: calc(1em + 0.5vw);
+    margin-bottom: calc(.5em + 0.75vw);
+    color: var(--color-blue) !important; 
+  }
+  
+  input,
+  button,
+  select,
+  textarea {
+    margin: 0; 
+    font-family: inherit;
+    font-size: inherit; 
+    line-height: inherit;
+    color: var(--color-black) !important; 
+  }
+  
+  .container {
+    width: 100%;
+    margin: 1vw auto 0 auto;
+  }
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  .header {
+    padding: 0 0.625rem;
+    margin-bottom: 1.875rem;
+  }
+  
+  .text-center {
+    text-align: center; 
+  }
+  
+  form {
+    background: var(--color-black);
+    padding: 3vw 2vw;
+    border-radius: 1vw;
+  }
+  
+  @media (min-width: 480px) {
+    form {
+      padding: 3vw;
+    }
+  }
+  
+  .form-group {
+    margin: 0 auto 1vw auto;
+    padding: 1vw;
+  }
+  
+  .form-item {
+    display: block;
+    width: 100%;
+    padding: 1vw;
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    border-radius: 1vw;
+  }
+  
+  .input-radio,
+  .input-checkbox {
+    display: inline-block;
+    margin-right: 1vw;
+    min-height: 2vw;
+    min-width: 2vw;
+  }
+  
+  .input-textarea {
+    min-height: 10vw;
+    width: 100%;
+    padding: 1vm;
+    resize: vertical;
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    background: var(--color-blue);
+    color: var(--color-white);
+    cursor: pointer;
+  }
