@@ -1,12 +1,13 @@
 :root {
     --color-red: #E94F37; 
-    --color-purple: #5C415D; 
     --color-white: #F6F7EB; 
     --color-yellow: #FFFC31; 
     --color-black: #393E41;
   }
   
-  * {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box; 
   }
   
@@ -18,52 +19,55 @@
   }
   
   header {
-    position: fixed; 
-    top: 0; 
-    min-height: 15vw; 
     background: var(--color-black); 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-around; 
-    align-items: center;
+    position: fixed; 
+    z-index: 999; 
     width: 100%; 
+    max-height: 20vh; 
+    top: 0; 
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center;
   }
   
   #header-img {
-    width: 40%;
     max-width: 200px; 
-    max-height: 200px; 
-    margin-left: auto; 
-    margin-right: auto; 
+    flex: 1 1 100%; 
+    margin: 5vw; 
   }
   
-  nav {
-    width: 60%; 
+  nav { 
+    flex: 1 1 100%; 
   }
   
   nav ul {
     display: flex; 
     flex-direction: row; 
     justify-content: space-evenly;
+    gap: 1em; 
   }
   
-  nav ul li {
+  nav li {
     list-style-type: none;
   }
   
-  nav ul li a {
+  nav a {
     text-decoration: none; 
     color: var(--color-white); 
     cursor: pointer;
   }
   
+  nav a:hover {
+    color: var(--color-yellow); 
+  }
+  
   form {
+    margin-top: 25vh; 
     display: flex; 
     flex-direction: column;
     justify-content: center; 
-    width: 60%; 
+    width: 100%; 
     text-align: center; 
-    margin: 20vw auto 0 auto; 
   }
   
   label {
@@ -87,30 +91,91 @@
   }
   
   section {
+    // width: 100%; 
     display: flex; 
+    flex-wrap: wrap;
     justify-content: center; 
     margin-top: 5vw; 
   }
   
+  section h2 {
+    width: 100%; 
+    text-align: center; 
+  }
+  
+  #pricing {
+    width: 100%; 
+  }
+  
+  .container {
+  
+  }
+  
+  .cards {
+    width: 100%; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem; 
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 10px solid var(--color-black);
+    border-radius: 5px; 
+    text-align: center; 
+  }
+  
+  .card-header {
+    width: 100%; 
+    height: 12vh;
+    background: var(--color-yellow);
+    color: var(--color-black);
+    text-align: center;
+  }
+  
+  button {
+    background: var(--color-red); 
+    color: var(--color-white); 
+    border: 2px solid var(--color-black); 
+    border-radius: 5px; 
+    padding: 5% 10%; 
+    font-size: 1em; 
+    margin-bottom: 2vh;
+  }
+  
+  button:hover {
+    background: var(--color-black); 
+  }
+  
+  .card-content {
+    padding: 2px 16px;
+  }
+  
+  footer {
+    width: 80vw; 
+    height: 10vh; 
+    background: var(--color-black); 
+    color: var(--color-white); 
+    margin: 5vh auto 0 auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  footer a {
+    color: var(--color-white); 
+    text-decoration: none; 
+  }
+  
+  
   @media (max-width: 768px) {
-    
-    nav {
-      width: 50%; 
-    }
     
     nav ul {
       flex-direction: column;
-      justify-content: center; 
+      max-width: 100%; 
+      text-align: right; 
+      margin-right: 5vw; 
     }
-    
-    nav ul li {
-      padding: 1vw;
-      margin-left: auto; 
-      margin-right: auto; 
-    }
-    
-    form {
-      margin: 30vw auto 0 auto; 
-    }
-    
+  
   }
