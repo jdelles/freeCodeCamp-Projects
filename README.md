@@ -8,10 +8,10 @@ Built a simple page about my favorite kitty cat
 Built a form to collect networking info (no form action - just demo) 
 
 ## Product Landing Page
-Building a page to sell space sprockets
+Built a page to sell space sprockets
 
 ## Technical Documentation
-Not Yet Started
+In progress - Making a document to explain a Linked List in Java
 
 ## Personal Portfolio
 Not Yet Started

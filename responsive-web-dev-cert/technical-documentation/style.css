@@ -1,0 +1,135 @@
+@charset "UTF-8"; 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --color-red: #FF605C;
+  --color-yellow: #FFBD44;
+  --color-green: #00CA4E; 
+  --color-black: #18191a;
+  --color-dark-gray: #242526;
+  --color-gray: #3a3b3c; 
+  --color-light-gray: #b0b3b8; 
+  --color-white: #e4e6eb; 
+}
+
+*, 
+*::before, 
+*::after {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background: var(--color-white); 
+  color: var(--color-dark-gray); 
+}
+
+.container {
+  display: flex; 
+  flex-direction: row; 
+}
+
+nav {
+  border-right: 3px solid var(--color-light-gray);
+  width: 260px;  
+  position: sticky;
+  top: 0;
+  padding-bottom: 32px;
+  overflow-y: auto;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex; 
+  flex-direction: column; 
+}
+
+nav header {
+  border-bottom: 3px solid var(--color-light-gray); 
+  padding: 2vw 5vw; 
+  font-size: 2rem;  
+  font-weight: 800; 
+}
+
+nav ul {
+  width: 100%; 
+}
+
+nav li {
+  border-bottom: 1px solid var(--color-light-gray); 
+  list-style: none; 
+  padding: 2vw 5vw; 
+}
+
+nav a {
+  color: var(--color-dark-gray); 
+  text-decoration: none; 
+  font-size: 1rem; 
+}
+
+main {
+  display: block;
+  width: 100%; 
+  padding: 5vw; 
+}
+/*
+main header {
+  border-bottom: 3px solid var(--color-light-gray); 
+  content: ''; 
+  padding: 2vw 5vw; 
+}
+*/ 
+
+section header {
+  font-size: 2rem; 
+  margin-bottom: 1vh; 
+}
+
+section p {
+  font-size: 1rem; 
+  margin-bottom: 1vh; 
+}
+
+.code-card {
+  max-width: 100%; 
+  width: 60vw; 
+  height: 40vh; 
+  background: var(--color-black); 
+  border: 2px solid var(--color-light-gray); 
+  box-shadow: 5px 10px var(--color-dark-gray);
+}
+
+.circle {
+  margin-left: 6px;
+  margin-top: 2px; 
+  height: 10px; 
+  width: 10px; 
+  border-radius: 50%; 
+  border: 1px solid var(--color-dark-gray); 
+}
+
+.red {
+  background: var(--color-red); 
+}
+
+.yellow {
+  background: var(--color-yellow); 
+}
+
+.green {
+  background: var(--color-green); 
+}
+
+.top-bar {
+  height: 15px; 
+  width: 100%; 
+  background: var(--color-light-gray); 
+  display: flex; 
+}
+
+code {
+  background: var(--color-black); 
+  color: var(--color-white); 
+  font-family: 'VT323', monospace;
+}
