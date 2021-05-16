@@ -7,23 +7,34 @@
         <nav id="navbar">
           <header>Java LinkedList()</header>
           <ul> 
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#">a</a></li>
-            <li><a href="#">a</a></li>
-            <li><a href="#">a</a></li>
-            <li><a href="#">a</a></li>
-            <li><a href="#">a</a></li>
-            <li><a href="#">a</a></li>
+            <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#Construction" class="nav-link">Construction</a></li>
+            <li><a href="#ListNode" class="nav-link">ListNode</a></li>
+            <li><a href="#Push" class="nav-link">Push</a></li>
+            <li><a href="#Pop" class="nav-link">Pop</a></li>
+            <li><a href="#Peek" class="nav-link">Peek</a></li>
+            <li><a href="#Reference" class="nav-link">Reference</a></li>
           </ul>
         </nav> 
         <main id="main-doc">
-          <section id="introduction"> 
+          <section id="Introduction" class="main-section"> 
             <header>Introduction</header>
             <p>A linked list is a linear data structure. Each list node contains an individual element as well as a pointer to the next node in the list. </p>
-            <p>some more text</p>
+            <p>This implementation of a linked list functions as a stack. Elements are added and removed in a last in, first out order. For example: </p>
+            <ul> 
+              <li>User adds "A" to the list. list contains: "A"</li>
+              <li>User adds "B" to the list. List contains: "B", "A"
+              <li>User removes an item from the list. "B" is returned and list contains: "A" 
+              <li>User adds "C" to the list. List contains: "C", "A"
+              <li>User removes an item from the list. "C" is returned and list contains: "A"
+            </ul>
+            <p>This creates a fast O(1), or constant time, implementation of a stack. No matter how large the list becomes, items can be added and removed at the same constant time. 
           </section> 
-          <section>
-            <div class="code-card">
+            <section id="Construction" class="main-section"> 
+            <header>Construction</header>
+            <p>The LinkedList class is created with a head and size element.</p>
+            <p>On construction, the head is null and the size is 0.</p>
+                       <div class="code-card">
               <div class="top-bar">
                 <div class="red circle"> 
                 </div>
@@ -34,25 +45,192 @@
               </div>
               <pre>
               <code>
-       public class ListNode() {
-      
-           private E data; 
-           private ListNode next; 
-      
-           public ListNode(E data, ListNode next) {
-               if (data == null) {
-                   throw new IllegalArgumentException("Data cannot be null"); 
-               }
-               this.data = data; 
-               this.next = next; 
-           }
+       public class LinkedListStack<E> {
+          
+          private ListNode head; 
+          private int size; 
+          
+          public LinkedListStack() {
+              head = null; 
+              size = 0; 
+          }
        }
               </code>
               </pre>
-            </code> 
             </div> 
+          </section> 
+            <section id="ListNode" class="main-section"> 
+            <header>ListNode</header>
+            <p>An inner ListNode class is created to contain the data to be stored in the list. Creating this as an inner class provides a measure of encapsulation.</p>
+            <p>Each ListNode contains the data to be stored and the next pointer. The next pointer is what allows each node to become a linked list.</p>
+                        <div class="code-card">
+              <div class="top-bar">
+                <div class="red circle"> 
+                </div>
+                <div class="yellow circle"> 
+                </div>
+                <div class="green circle"> 
+                </div> 
+              </div>
+              <pre>
+              <code>
+        public class LinkedListStack<E> {
+          
+          private ListNode head; 
+          private int size; 
+          
+          public LinkedListStack() {
+              head = null; 
+              size = 0; 
+          }
+          
+          public class ListNode {
+              
+              private E data; 
+              private ListNode next; 
+              
+              public ListNode(E data, ListNode next) {
+                  this.data = data; 
+                  this.next = next; 
+              }
+          }
+       }
+              </code>
+              </pre>
+            </div> 
+          </section> 
+            <section id="Push" class="main-section"> 
+            <header>Push</header>
+            <p>Push adds an element to the list.</p>
+            <p>The element and the current head are used to create a new ListNode. Head is then updated to reference this new ListNode.</p>
+                         <div class="code-card">
+              <div class="top-bar">
+                <div class="red circle"> 
+                </div>
+                <div class="yellow circle"> 
+                </div>
+                <div class="green circle"> 
+                </div> 
+              </div>
+              <pre>
+              <code>
+        public class LinkedListStack<E> {
+          
+          private ListNode head; 
+          private int size; 
+          
+          public LinkedListStack() {
+              head = null; 
+              size = 0; 
+          }
+          
+          public void push(E data) {
+              head = new ListNode(data, head); 
+              size++; 
+          }
+      
+           public class ListNode {...}
+       }
+              </code>
+              </pre>
+            </div> 
+          </section> 
+            <section id="Pop" class="main-section"> 
+            <header>Pop</header>
+            <p>Pop removes and returns an element from the list.</p>
+            <p>The data from the head element is stored so it can be returned after the element is deleted from the list. The element is deleted by setting head to the next value on the list. Then, the data from the removed element is returned.</p>
+                        <div class="code-card">
+              <div class="top-bar">
+                <div class="red circle"> 
+                </div>
+                <div class="yellow circle"> 
+                </div>
+                <div class="green circle"> 
+                </div> 
+              </div>
+              <pre>
+              <code>
+        public class LinkedListStack<E> {
+          
+          private ListNode head; 
+          private int size; 
+          
+          public LinkedListStack() {
+              head = null; 
+              size = 0; 
+          }
+          
+          public void push(E data) {
+              head = new ListNode(data, head); 
+              size++; 
+          }
+          
+          public E pop() {
+              E returnValue = head.data; 
+              head = head.next; 
+              size--; 
+              return returnValue; 
+          }
+      
+           public class ListNode {...}
+       }
+              </code>
+              </pre>
+            </div> 
+          </section> 
+            <section id="Peek" class="main-section"> 
+            <header>Peek</header>
+            <p>Peek gets the value of the data stored in the head node.</p>
+            <p>Peek does not alter the list in any way.</p>
+          <div class="code-card">
+              <div class="top-bar">
+                <div class="red circle"> 
+                </div>
+                <div class="yellow circle"> 
+                </div>
+                <div class="green circle"> 
+                </div> 
+              </div>
+              <pre>
+              <code>
+        public class LinkedListStack<E> {
+          
+          private ListNode head; 
+          private int size; 
+          
+          public LinkedListStack() {
+              head = null; 
+              size = 0; 
+          }
+          
+          public void push(E data) {
+              head = new ListNode(data, head); 
+              size++; 
+          }
+          
+          public E pop() {
+              E returnValue = head.data; 
+              head = head.next; 
+              size--; 
+              return returnValue; 
+          }
+          
+          public E peek() {
+              return head.data; 
+          }
+      
+           public class ListNode {...}
+       }
+              </code>
+              </pre>
+            </div> 
+          </section> 
+          <section id="Reference" class="main-section"> 
+            <header>Reference</header>
+            <p>See: <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html" target="_blank">Java documentation</a> for additional information on LinkedLists including other implementations.</p>
           </section> 
         </main>
       <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-      </body>       
+      </body> 
+      
 </html>

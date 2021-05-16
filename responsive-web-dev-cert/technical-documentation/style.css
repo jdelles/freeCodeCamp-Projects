@@ -21,6 +21,15 @@
   box-sizing: border-box; 
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-red); 
+}
+
 body {
   font-family: Poppins, sans-serif;
   background: var(--color-white); 
@@ -30,6 +39,7 @@ body {
 .container {
   display: flex; 
   flex-direction: row; 
+  width: 100vw; 
 }
 
 nav {
@@ -37,7 +47,6 @@ nav {
   width: 260px;  
   position: sticky;
   top: 0;
-  padding-bottom: 32px;
   overflow-y: auto;
   height: 100vh;
   flex-shrink: 0;
@@ -58,28 +67,25 @@ nav ul {
 
 nav li {
   border-bottom: 1px solid var(--color-light-gray); 
-  list-style: none; 
   padding: 2vw 5vw; 
 }
 
 nav a {
   color: var(--color-dark-gray); 
-  text-decoration: none; 
   font-size: 1rem; 
 }
 
 main {
   display: block;
-  width: 100%; 
-  padding: 5vw; 
+  position: relative;
+  width: 90%; 
+  max-width: 800px;
+  margin: 5vh auto; 
 }
-/*
-main header {
-  border-bottom: 3px solid var(--color-light-gray); 
-  content: ''; 
-  padding: 2vw 5vw; 
+
+section {
+  padding: 1vh 2vw; 
 }
-*/ 
 
 section header {
   font-size: 2rem; 
@@ -91,13 +97,21 @@ section p {
   margin-bottom: 1vh; 
 }
 
+section ul {
+  margin-left: 5vw; 
+  margin-bottom: 1vh; 
+}
+
+section li {
+  list-style: inside;
+}
+
 .code-card {
-  max-width: 100%; 
-  width: 60vw; 
-  height: 40vh; 
+  max-width: 90%;
   background: var(--color-black); 
   border: 2px solid var(--color-light-gray); 
   box-shadow: 5px 10px var(--color-dark-gray);
+  margin-bottom: 5vh; 
 }
 
 .circle {
@@ -132,4 +146,30 @@ code {
   background: var(--color-black); 
   color: var(--color-white); 
   font-family: 'VT323', monospace;
+}
+
+@media (max-width: 768px) {
+  
+  .container {
+    flex-wrap: wrap; 
+  }
+  
+  nav {
+    width: 100%; 
+    height: auto;
+    position: fixed;
+    border: 0; 
+    z-index: 1; 
+    background-color: var(--color-white);
+  }
+  
+  nav ul {
+    display: none; 
+  }
+  
+  main {
+    position: absolute;
+    z-index: 0;
+  }
+    
 }
