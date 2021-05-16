@@ -11,7 +11,7 @@ Built a form to collect networking info (no form action - just demo)
 Built a page to sell space sprockets
 
 ## Technical Documentation
-In progress - Making a document to explain a Linked List in Java
+Built a document to explain a stack using LinkedLists in Java
 
 ## Personal Portfolio
 Not Yet Started
