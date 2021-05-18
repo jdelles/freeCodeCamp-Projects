@@ -1,0 +1,13 @@
+#welcome {
+    height: 100vh; 
+  }
+  
+  nav {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+  }
+  
+  @media (min-width: 768px) {
+    
+  }
