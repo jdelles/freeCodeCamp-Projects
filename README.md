@@ -14,4 +14,4 @@ Built a page to sell space sprockets
 Built a document to explain a stack using LinkedLists in Java
 
 ## Personal Portfolio
-Not Yet Started
+In Progress

@@ -23,17 +23,17 @@
             <p>This implementation of a linked list functions as a stack. Elements are added and removed in a last in, first out order. For example: </p>
             <ul> 
               <li>User adds "A" to the list. list contains: "A"</li>
-              <li>User adds "B" to the list. List contains: "B", "A"
-              <li>User removes an item from the list. "B" is returned and list contains: "A" 
-              <li>User adds "C" to the list. List contains: "C", "A"
-              <li>User removes an item from the list. "C" is returned and list contains: "A"
+              <li>User adds "B" to the list. List contains: "B", "A"</li>
+              <li>User removes an item from the list. "B" is returned and list contains: "A" </li>
+              <li>User adds "C" to the list. List contains: "C", "A"</li>
+              <li>User removes an item from the list. "C" is returned and list contains: "A"</li>
             </ul>
-            <p>This creates a fast O(1), or constant time, implementation of a stack. No matter how large the list becomes, items can be added and removed at the same constant time. 
+            <p>This creates a fast O(1), or constant time, implementation of a stack. No matter how large the list becomes, items can be added and removed at the same constant time.</p> 
           </section> 
             <section id="Construction" class="main-section"> 
             <header>Construction</header>
             <p>The LinkedList class is created with a head and size element.</p>
-            <p>On construction, the head is null and the size is 0.</p>
+            <p>On construction, the head is null and the size is 0. <em>(Size is not used in this list implementation but its still good habit to properly increment and decrement size. Size will be used in JUnit testing.)</em></p>
                        <div class="code-card">
               <div class="top-bar">
                 <div class="red circle"> 
@@ -45,7 +45,7 @@
               </div>
               <pre>
               <code>
-       public class LinkedListStack<E> {
+      public class LinkedListStack&ltE&gt {
           
           private ListNode head; 
           private int size; 
@@ -54,7 +54,7 @@
               head = null; 
               size = 0; 
           }
-       }
+      }
               </code>
               </pre>
             </div> 
@@ -74,7 +74,7 @@
               </div>
               <pre>
               <code>
-        public class LinkedListStack<E> {
+      public class LinkedListStack&ltE&gt {
           
           private ListNode head; 
           private int size; 
@@ -83,18 +83,21 @@
               head = null; 
               size = 0; 
           }
-          
+      
           public class ListNode {
-              
+          
               private E data; 
               private ListNode next; 
               
               public ListNode(E data, ListNode next) {
-                  this.data = data; 
+                  if (data == null) {
+                      throw new IllegalArgumentException(); 
+                  }
+                  this.data = data;
                   this.next = next; 
               }
           }
-       }
+      }
               </code>
               </pre>
             </div> 
@@ -114,7 +117,7 @@
               </div>
               <pre>
               <code>
-        public class LinkedListStack<E> {
+      public class LinkedListStack&ltE&gt {
           
           private ListNode head; 
           private int size; 
@@ -129,8 +132,8 @@
               size++; 
           }
       
-           public class ListNode {...}
-       }
+          public class ListNode {...}
+      }
               </code>
               </pre>
             </div> 
@@ -150,7 +153,7 @@
               </div>
               <pre>
               <code>
-        public class LinkedListStack<E> {
+      public class LinkedListStack&ltE&gt {
           
           private ListNode head; 
           private int size; 
@@ -172,8 +175,8 @@
               return returnValue; 
           }
       
-           public class ListNode {...}
-       }
+          public class ListNode {...}
+      }
               </code>
               </pre>
             </div> 
@@ -182,7 +185,7 @@
             <header>Peek</header>
             <p>Peek gets the value of the data stored in the head node.</p>
             <p>Peek does not alter the list in any way.</p>
-          <div class="code-card">
+                        <div class="code-card">
               <div class="top-bar">
                 <div class="red circle"> 
                 </div>
@@ -193,7 +196,7 @@
               </div>
               <pre>
               <code>
-        public class LinkedListStack<E> {
+      public class LinkedListStack&ltE&gt {
           
           private ListNode head; 
           private int size; 
@@ -219,9 +222,9 @@
               return head.data; 
           }
       
-           public class ListNode {...}
-       }
-              </code>
+          public class ListNode {...}
+      }
+         </code>
               </pre>
             </div> 
           </section> 
@@ -231,6 +234,5 @@
           </section> 
         </main>
       <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-      </body> 
-      
+      </body>       
 </html>

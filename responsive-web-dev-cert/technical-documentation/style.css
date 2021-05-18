@@ -21,6 +21,10 @@
   box-sizing: border-box; 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 li {
   list-style: none;
 }
@@ -33,18 +37,19 @@ a {
 body {
   font-family: Poppins, sans-serif;
   background: var(--color-white); 
-  color: var(--color-dark-gray); 
+  color: var(--color-black); 
 }
 
 .container {
   display: flex; 
   flex-direction: row; 
   width: 100vw; 
+  overflow-y: scroll;
 }
 
 nav {
   border-right: 3px solid var(--color-light-gray);
-  width: 260px;  
+  width: 280px;  
   position: sticky;
   top: 0;
   overflow-y: auto;
@@ -55,7 +60,6 @@ nav {
 }
 
 nav header {
-  border-bottom: 3px solid var(--color-light-gray); 
   padding: 2vw 5vw; 
   font-size: 2rem;  
   font-weight: 800; 
@@ -66,13 +70,18 @@ nav ul {
 }
 
 nav li {
-  border-bottom: 1px solid var(--color-light-gray); 
-  padding: 2vw 5vw; 
+  border-top: 1px solid var(--color-light-gray); 
 }
 
 nav a {
-  color: var(--color-dark-gray); 
-  font-size: 1rem; 
+  display: block;
+  padding: 2vw 5vw;
+  color: var(--color-black); 
+  font-size: 1.1rem; 
+}
+
+nav a:hover {
+  color: var(--color-red); 
 }
 
 main {
@@ -93,7 +102,7 @@ section header {
 }
 
 section p {
-  font-size: 1rem; 
+  font-size: 1.1rem; 
   margin-bottom: 1vh; 
 }
 
