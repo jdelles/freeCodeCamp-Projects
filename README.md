@@ -14,4 +14,6 @@ Built a page to sell space sprockets
 Built a document to explain a stack using LinkedLists in Java
 
 ## Personal Portfolio
-In Progress
+Built a basic porfolio page - will continue to iterate and likely replace my jdelles.github.io site soon. 
+
+## Responsive Web Design Certification Achieved May 21, 2021
